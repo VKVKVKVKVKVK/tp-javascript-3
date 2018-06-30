@@ -16,7 +16,7 @@ class Messages extends React.Component {
   }
 
   render() {
-    return <MessageLayout renderList={() => <MessageList/>} renderInput={() => <InputMessage />} />;
+    return <MessageLayout renderList={() => <MessageList/>} renderInput={() => <InputMessage onSubmitEnter={(mes) => this.handleSubmitMessage(mes)} />} />;
   }
 }
 
