@@ -13,18 +13,17 @@ export default function Root(props) {
   });
 
   /*
-  const isPrivate = (Component) => connect(mapStateToProps)((props) => props.isLoggedIn ? <Component  store={props.ownprops}  /> : <LogInLayout/>);
-  */
-  /*enlever props={props.ownprops} si fail*/
+  const isPrivate = (Component) => connect(mapStateToProps)(props.isLoggedIn ? <Component  store={props.ownprops}  /> : <LogInLayout/>);
   
-  /*
-  const isPrivate = (Component) => connect(mapStateToProps)((props) => <Component  store={props.ownprops}  />);
-
-
   const PrivateMessages = isPrivate(Messages);
-*/
+
+  //FIXME: Condition authentification n'active pas les composants...
+  */
+
+
   return (
     <Provider store={props.store}>
+    
         <Messages style={{
           padding: "24px 0",
           backgroundImage: "url(" + "../images/background.png" + ")",
@@ -32,7 +31,7 @@ export default function Root(props) {
         }}/>
     </Provider>
   );
-  /* Mettre <Messages dans le return pr afficher messages/> */
+  /* Mettre <PrivateMessages/>  à la place de <Messages/> pour activer la vue par défaut*/
 }
 
 
